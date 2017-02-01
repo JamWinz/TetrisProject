@@ -14,6 +14,7 @@
   font-family: "Impact";
   font-size: 25px;
   letter-spacing: 2px;
+
 }
 
 #gameBorder {
@@ -166,10 +167,18 @@
   margin-left: 200px;
   background-color: #f2f2f2;
   color: black;
-  border: solid 1px black;
   text-align: center;
-  box-shadow: 10px 0px 5px #888;
   font-family: "Impact";
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: lighter;
   letter-spacing: 3px;
+  background: #fff;
+  background: -webkit-linear-gradient(#fff, #999);
+  background: linear-gradient(#fff, #999);
+  border: 1px solid #000;
+  border-radius: 5px;
+  box-shadow: 2px -2px 0 0 #444;
+  color: #000;
+  display: inline-block;
+  padding: 8px 20px;
 }
