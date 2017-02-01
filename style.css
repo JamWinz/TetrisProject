@@ -1,8 +1,19 @@
+#title {
+  position: absolute;;
+  margin-top: 20px;
+  margin-left: 330px;
+  font-family: "Impact";
+  font-size: 45px;
+  letter-spacing: 4px;
+}
 
 #nextBlockHeading {
-  position: fixed;
-  margin-top: 70px;
+  position: absolute;;
+  margin-top: 50px;
   margin-left: 50px;
+  font-family: "Impact";
+  font-size: 25px;
+  letter-spacing: 2px;
 }
 
 #gameBorder {
@@ -153,11 +164,11 @@
   position: relative;
   margin-top: 20px;
   margin-left: 200px;
-  /*background-color: black;
-  color: white;*/
+  color: black;
   border: solid 1px black;
   text-align: center;
-  font-size: 16px;
   box-shadow: 10px 0px 5px #888;
-
+  font-family: "Impact";
+  font-size: 25px;
+  letter-spacing: 3px;
 }
