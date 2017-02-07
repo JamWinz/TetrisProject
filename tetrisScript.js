@@ -2,11 +2,45 @@
 $(function() {
   var count = 1;
   console.log("jQuery was loaded");
-/*
-  for(var i = 1; i <= 15;i++){
-      console.log();
 
-      $("#row1").css(
+  $("#button").mouseover(function() {
+    $(this).css("background-color", "green");
+  });
+  $("#button").mouseout(function() {
+    $(this).css("background-color", "gray");
+  });
+
+
+  $("#button").click(function() {
+  var divArr = [$("#d1"), $("#d2"), $("#d3")];
+  for(var i = 0; i < divArr.length; i++){
+    //console.log(i);
+    $(divArr[i]).queue(function () {
+      //console.log(i)
+      //console.log($("#d"+(i+1)));
+      $("#d"+(i)).css("background-color", "#47ea15");
+      $("#d"+(i+2)).delay(500);
+      $("#d"+(i-1)).css("background-color", "black");
+      //$("#d"+(i-1)).delay(500)
+
+      //***********************************************************************************************
+      //WRITE AN IF STATEMENT TO CHECK IF THE NEXT BLOCK IS OF CLASS BOX AND IF IT IS THEN STOP MOVEMENT
+      });
+  }
+    });
+
+  //*TODO* AUTO GENERATE GRID SYSTEM *TODO*
+  var row = 15;
+  var colum = 10;
+
+  for(var i = 1; i <= row; i++) {
+
+  }
+
+  for(var i = 1; i <= 15; i++){
+      console.log();
+      $('body').append('<div id="div'+ (i++) +'" />');
+    /*  $("#row1").css(
         "display", "inline-block",
         "background-color", "black",
         "border", "2px solid lightgrey",
@@ -14,12 +48,12 @@ $(function() {
         "height", "25px",
         "float", "left",
         "color", "black"
-      );
+      );*/
   for(var j = 1; j <= 10; j++){
       console.log(i);
       }
     }
-    */
+
 });
 
 
