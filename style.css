@@ -1,175 +1,103 @@
-#title {
-  position: absolute;;
-  margin-top: 20px;
-  margin-left: 330px;
-  font-family: "Impact";
-  font-size: 45px;
-  letter-spacing: 4px;
+ td, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+ }
+
+ td {
+   display: inline-block;
+   background-color: gray;
+   border: solid 2px lightgrey;
+   width: 25px;
+   height: 25px;
+   float: left;
+   color: black;
+ }
+
+ .colorBox {
+   display: inline-block;
+   background-color: green;
+   border: solid 2px lightgrey;
+   width: 25px;
+   height: 25px;
+   float: left;
+   color: black;
+   /*box-shadow: 10px 0px 5px #888;*/
+ }
+
+ .Box {
+   display: inline-block;
+   background-color: gray;
+   border: solid 2px lightgrey;
+   width: 25px;
+   height: 25px;
+   float: left;
+   color: black;
+   /*box-shadow: 10px 0px 5px #888;*/
+ }
+
+
+ table {
+   border-collapse: collapse;
+    position: relative;
+    margin-top: -208px;
+    margin-left: 285px;
+    border: solid 3px black;
 }
 
-#nextBlockHeading {
-  position: absolute;;
-  margin-top: 50px;
-  margin-left: 50px;
-  font-family: "Impact";
-  font-size: 25px;
-  letter-spacing: 2px;
-}
+ #screenBorder {
+   margin: 30px 300px 100px;
+   border: solid 3px black;
+   height: 700px;
+   width: 630px;
+   border-radius: 1%;
+   box-shadow: 10px 0px 5px #888;
+ }
 
-#gameBorder {
-  position: relative;
-  margin-top: -205px;
-  margin-left: 245px;
-  border: solid 3px black;
-  height: 435px;
-  width: 290px;
-}
+ #title {
+   position: absolute;;
+   margin-top: 20px;
+   margin-left: 365px;
+   font-family: "Impact";
+   font-size: 45px;
+   letter-spacing: 4px;
+ }
 
-#nextBlockBorder {
-  position: relative;
-  background-color: #FAF0E6;
-  margin-top: 100px;
-  margin-left: 15px;
-  border: solid 3px black;
-  height: 200px;
-  width: 200px;
-  box-shadow: 10px 0px 5px #888;
-}
+ #nextBlockHeading {
+   position: absolute;;
+   margin-top: 50px;
+   margin-left: 50px;
+   font-family: "Impact";
+   font-size: 25px;
+   letter-spacing: 2px;
+ }
 
-#nextBlock {
-  position: absolute;
-  margin-left: 55px;
-  margin-top: 75px;
-}
+ #nextBlockBorder {
+   position: relative;
+   background-color: #FAF0E6;
+   margin-top: 100px;
+   margin-left: 15px;
+   border: solid 3px black;
+   height: 200px;
+   width: 200px;
+   box-shadow: 10px 0px 5px #888;
+ }
 
-#screenBorder {
-  margin: 30px 300px 100px;
-  border: solid 3px black;
-  height: 655px;
-  width: 560px;
-  border-radius: 1%;
-  box-shadow: 10px 0px 5px #888;
-}
+ #nextBlock {
+   position: absolute;
+   margin-left: 55px;
+   margin-top: 75px;
+ }
 
-
-.box {
-  display: inline-block;
-  background-color: black;
-  border: solid 2px lightgrey;
-  width: 25px;
-  height: 25px;
-  float: left;
-  color: black;
-  /*box-shadow: 10px 0px 5px #888;*/
-}
-
-.redBox {
-  display: inline-block;
-  background-color: #ff0101;
-  border: solid 2px lightgrey;
-  width: 25px;
-  height: 25px;
-  float: left;
-  color: black;
-  /*box-shadow: 10px 0px 5px #888;*/
-}
-
-.greenBox {
-  display: inline-block;
-  background-color: #47ea15;
-  border: solid 2px lightgrey;
-  width: 25px;
-  height: 25px;
-  float: left;
-  color: black;
-  /*box-shadow: 10px 0px 5px #888;*/
-}
-
-#row1{
-
-  margin-top: 0px;
-}
-
-#row2{
-  position: absolute;
-  margin-top: 29px;
-}
-
-#row3{
-  position: absolute;
-  margin-top: 58px;
-}
-
-#row4{
-  position: absolute;
-  margin-top: 87px;
-}
-
-#row5{
-  position: absolute;
-  margin-top: 116px;
-}
-
-#row6{
-  position: absolute;
-  margin-top: 145px;
-}
-
-#row7{
-  position: absolute;
-  margin-top: 174px;
-}
-
-#row8{
-  position: absolute;
-  margin-top: 203px;
-}
-
-#row9{
-  position: absolute;
-  margin-top: 232px;
-}
-
-#row10{
-  position: absolute;
-  margin-top: 261px;
-}
-
-#row11{
-  position: absolute;
-  margin-top: 290px;
-}
-
-#row12{
-  position: absolute;
-  margin-top: 319px;
-}
-
-#row13{
-  position: absolute;
-  margin-top: 348px;
-}
-
-#row14{
-  position: absolute;
-  margin-top: 377px;
-}
-
-#row15{
-  position: absolute;
-  margin-top: 406px;
-}
-
-#button {
-  position: relative;
-  margin-top: 20px;
-  margin-left: 200px;
-  background-color: gray;
-  color: black;
-  border: solid 1px black;
-  text-align: center;
-  box-shadow: 10px 0px 5px #888;
-  font-family: "Impact";
-  font-size: 25px;
-  letter-spacing: 3px;
-}
+ #button {
+   position: relative;
+   margin-top: 20px;
+   margin-left: 200px;
+   background-color: gray;
+   color: black;
+   border: solid 1px black;
+   text-align: center;
+   box-shadow: 10px 0px 5px #888;
+   font-family: "Impact";
+   font-size: 25px;
+   letter-spacing: 3px;
+ }
