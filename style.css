@@ -5,7 +5,7 @@
 
  td {
    display: inline-block;
-   background-color: gray;
+   background-color: black;
    border: solid 2px lightgrey;
    width: 25px;
    height: 25px;
@@ -15,7 +15,7 @@
 
  .colorBox {
    display: inline-block;
-   background-color: green;
+   background-color: grey;
    border: solid 2px lightgrey;
    width: 25px;
    height: 25px;
