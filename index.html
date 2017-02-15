@@ -27,14 +27,14 @@
 
       tetris.addListener(function(grid) {
         console.log("Model has been updated!");
-        for(var r = 0; r < 15; r++){
-          for(var c = 0; c < 10; c++){
+        for(var r = 0; r < grid.length; r++){
+          for(var c = 0; c < grid[r].length; c++){
             // Clear the cell
-            $("#R"+r+"C"+c).empty();
-            if(grid[r][c] === null){
+            if(grid[r][c]) {
+              $("#R"+r+"C"+c).addClass("colorBox");
             }
             else{
-              $("#R"+r+"C"+c).append(grid[r][c]);
+              $("#R"+r+"C"+c).removeClass("colorBox");
             }
           }
         }
