@@ -52,18 +52,20 @@ var tetris = (function() {
             }
 
             function playMove(id){
-              var row = parseInt(id[1], 10);
-              var col = parseInt(id[3], 10);
+              var row = parseInt(id[1]+id[2], 10);
+              var col = parseInt(id[4]+id[5], 10);
+              console.log(row + " " + col);
               grid[row][col] = true;
               notify();
               var interval = setInterval(function() {
-                grid[row][col] = false;
-                row++;
-                grid[row][col] = true;
-                if (row === grid.length-1 || grid[row+1][col] === true) {
+                if (row+1 === grid.length-1 || grid[row+2][col] === true) {
                   // we reached the bottom
                   clearInterval(interval);
                 }
+                grid[row][col] = false;
+                row++;
+                grid[row][col] = true;
+
                 notify();
               }, 100);
         }
