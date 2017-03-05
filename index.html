@@ -5,24 +5,80 @@
     <title style="text-align:center">Tetris</title>
     <script src="jquery-3.1.1.min.js"></script>
     <script src="tetris.js"></script>
+    <audio>
+        <source src="audio.mp3"></source>
+</audio>
     <script>
     $(function() {
+      var playCount = 0;
+      var muteCount = 1;
+      var audio = $("audio")[0];
+
       //BUTTON
       $("#button").mouseover(function() {
-        $(this).css("background-color", "green");
+        $(this).css("background-color", "lightblue");
       });
       $("#button").mouseout(function() {
-        $(this).css("background-color", "gray");
+        $(this).css("background-color", "green");
+      });
+
+      $("#mute").click(function() {
+        //Controller for playing a move
+        if(muteCount % 2 !== 0){
+          audio.pause();
+          muteCount++;
+          $('#mute').text("Unmute");
+        }
+        else{
+          audio.play();
+          muteCount++;
+          $('#mute').text("Mute");
+        }
+      });
+
+      var activeid = null;
+
+      $("body").keydown(function(e) {
+        if(e.keyCode == 37) { // left
+          tetris.moveLeft();
+        }
+        else if(e.keyCode == 39) { // right
+          tetris.moveRight();
+        }
+        else if(e.keyCode == 40){ // down
+          tetris.moveDown();
+        }
+        else if(e.keyCode == 88){ // auto complete grid
+          tetris.autoComplete();
+        }
+      });
+
+      //FOR PHONE (BUTTON MOVEMENT)
+      $("#leftB").click(function() {
+        tetris.moveLeft();
+      });
+      //FOR PHONE (BUTTON MOVEMENT)
+      $("#rightB").click(function() {
+        tetris.moveRight();
+      });
+      //FOR PHONE (BUTTON MOVEMENT)
+      $("#downB").click(function() {
+        tetris.moveDown();
+      });
+      //FOR PHONE (BUTTON MOVEMENT)
+      $("#autoB").click(function() {
+        tetris.autoComplete();
       });
 
       //var player1 = true;
-      $("td").click(function() {
+      $("#button").click(function() {
+        if(playCount === 0){
         //Controller for playing a move
-        var id = $(this).attr("id");
-        //Play the move in the model
-        //tetris.playMove(id);
-        tetris.playMove(id)
-        //setInterval( function() { tetris.playMove(id); }, 500 );
+        audio.play();
+        tetris.startGame(); //Make sure there is a mute button too!
+        $('#score').append();
+        playCount++;
+      }
       });
 
       tetris.addListener(function(grid) {
@@ -43,6 +99,7 @@
             }
             else{
               $("#R"+rdigit+"C"+cdigit).removeClass("colorBox");
+
             }
           }
         }
@@ -60,12 +117,17 @@
     <h3 id="title"> <span style="color:#ff3333">T</span><span style="color:#ff751a">E</span><span style="color:#ff1a">T</span><span style="color:#33cc33">R</span><span style="color:#3385ff">I</span><span style="color:#661aff">S</span><h3>
     <h2 id="nextBlockHeading">Next Block:</h2>
     <div id="nextBlockBorder">
-      <div id="nextBlock"><div class="colorBox"></div><div class="colorBox"></div><div class="colorBox"></div></div>
+      <div id="nextBlock" class="colorBox"></div>
+    </div>
+    <h2 id="nextBlockHeading">&nbsp&nbsp&nbsp&nbsp&nbspScore</h2>
+    <div id="scoreBorder">
+      <h2 id="score"></h2>
     </div>
     <div id="gameBorder">
-    <table id="grd">
+    <table id="grd" style="z-index:1">
       <!-- Row 0 -->
-      <tr><td id="R00C00"></td><td id="R00C01"></td><td id="R00C02" class="colorBox"></td><td id="R00C03"><td id="R00C04"></td><td id="R00C05"></td></td>
+      <div id="gameover" style="z-index:2"></div>
+      <tr><td id="R00C00"></td><td id="R00C01"></td><td id="R00C02"></td><td id="R00C03"><td id="R00C04"></td><td id="R00C05"></td></td>
       <td id="R00C06"></td><td id="R00C07"></td><td id="R00C08"></td><td id="R00C09"></td></tr>
       <!-- Row 1 -->
       <tr><td id="R01C00"></td><td id="R01C01"></td><td id="R01C02"></td><td id="R01C03"><td id="R01C04"></td><td id="R01C05"></td></td>
@@ -111,7 +173,13 @@
       <td id="R14C06"></td><td id="R14C07"></td><td id="R14C08"></td><td id="R14C09"></td></tr>
     </table>
   </div>
-  <div id="buttonDiv"><button id="button" style="width:150px;height:75px">Play</div>
+  <div id="buttonDiv"><button id="button" style="width:150px;height:75px">Play</button>
+                      <button id="leftB" style="width:75px;height:55px">←</button>
+                      <button id="rightB" style="width:75px;height:55px">→</button>
+                      <button id="downB" style="width:75px;height:55px">↓</button>
+                      <button id="autoB" style="width:45px;height:35px">Auto<br>Fill</button></div>
+    <a id="reset" HREF="javascript:history.go(0)">Reset</a>
+    <a id="mute">Mute</a>
   </div>
   </body>
 </html>
